@@ -1,0 +1,91 @@
+<%- contentFor('body') %>
+<!-- ================= main slide ================= -->
+<div class="owl-init slider-main owl-carousel" data-items="1" data-nav="true" data-dots="false">
+	<div class="item-slide">
+		<img src="images/banners/banner1.png">
+	</div>
+	<div class="item-slide">
+		<img src="images/banners/banner2.png">
+	</div>
+	<div class="item-slide">
+		<img src="images/banners/banner3.png">
+	</div>
+	<div class="item-slide">
+		<img src="images/banners/banner4.png">
+	</div>
+	<div class="item-slide">
+		<img src="images/banners/banner5.png">
+	</div>
+	<div class="item-slide">
+		<img src="images/banners/banner6.png">
+	</div>
+	<div class="item-slide">
+		<img src="images/banners/banner7.png">
+	</div>
+</div>
+
+<!-- ========================= SECTION REQUEST .END// ========================= -->
+
+<!-- ========================= SECTION ITEMS ========================= -->
+<section class="section-request bg padding-y-sm">
+	<div class="container">
+		<header class="section-heading heading-line">
+		
+		<h4 class="title-section bg text-uppercase">Itens de Recomendação</h4>
+		</header>
+		
+		<div class="row-sm">
+		<div class="col-md-2">
+			<%produtos.forEach(function(produtos){%>
+			<figure class="card card-product">    		
+        		<img src="..\images\items\<%=produtos.tipo%>\<%=produtos.imagens%>">
+				<h6 class="title ">
+				<a href="#">
+				<%if(produtos.title == 'Smartphone ASUS ROG Phone 3 8GB/ 128GB Preto') {%>
+				<a href="/smartphone-detalhes">
+				<%}%>
+				
+				<%if(produtos.title == 'Monitor Gamer Bluecase LED 27", Full HD, HDMI/DisplayPort, 144Hz, 1ms') {%>
+					<a href="/monitor-detalhes">
+				<%}%>
+
+				<%if(produtos.title == 'Geladeira Frost Free Syde Inverse 3 Portas 540L 220V Platinum - Brastemp') {%>
+					<a href="/geladeira-detalhes">
+				<%}%>
+
+				<%if(produtos.title == 'Conjunto Box King 193 cm Tower') {%>
+					<a href="/cama-detalhes">
+				<%}%>
+				
+				<%if(produtos.title == 'Cpu Gamer') {%>
+					<a href="/cpu-detalhes">
+				<%}%>
+
+				<%if(produtos.title == 'Estação de Musculação Kikos Gx4i') {%>
+					<a href="/estacao-detalhes">
+				<%}%>
+				
+				<%if(produtos.title == produtos.title.match(/.*TV.*/)) {%>
+					<a href="/tv-detalhes">
+				<%}%>
+
+				<%if(produtos.title == 'Cafeteira Expresso Oster PrimaLatte 19 Bar - Vermelha 220V') {%>
+					<a href="/cafeteira-detalhes">
+				<%}%>
+
+					
+				<%=produtos.title%></a></h6>
+				<span class="price-new">R$ <%= produtos.price %>,00</span>
+			
+		</figure> <!-- card // -->
+	</div> <!-- col // -->
+
+	<div class="col-md-2">
+			<%})%>
+	</div> <!-- col // -->
+
+
+</div><!-- container // -->
+	
+
+</section>

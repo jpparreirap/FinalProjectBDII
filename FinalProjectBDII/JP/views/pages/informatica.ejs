@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Bootstrap-ecommerce by Vosidiy">
+
+<title>Bootstrap ecommerce UI KIT - Alibaba example html template </title>
+
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+
+<!-- jQuery -->
+<script src="js/jquery-2.0.0.min.js" type="text/javascript"></script>
+
+<!-- Bootstrap4 files-->
+<script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+
+<!-- Font awesome 5 -->
+<link href="fonts/fontawesome/css/fontawesome-all.min.css" type="text/css" rel="stylesheet">
+
+<!-- plugin: owl carousel  -->
+<link href="plugins/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="plugins/owlcarousel/assets/owl.theme.default.css" rel="stylesheet">
+<script src="plugins/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- custom style -->
+<link href="css/ui.css" rel="stylesheet" type="text/css"/>
+<link href="css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+
+<!-- custom javascript -->
+<script src="js/script.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+/// some script
+
+// jquery ready start
+$(document).ready(function() {
+	// jQuery code
+
+}); 
+// jquery end
+</script>
+
+</head>
+
+<!-- ================= main slide ================= -->
+<div class="owl-init slider-main owl-carousel" data-items="1" data-nav="true" data-dots="false">
+	<div class="item-slide">
+		<img src="images/banners/banner1.png">
+	</div>
+	<div class="item-slide">
+		<img src="images/banners/banner2.png">
+	</div>
+	<div class="item-slide">
+		<img src="images/banners/banner3.png">
+	</div>
+	<div class="item-slide">
+		<img src="images/banners/banner4.png">
+	</div>
+	<div class="item-slide">
+		<img src="images/banners/banner5.png">
+	</div>
+	<div class="item-slide">
+		<img src="images/banners/banner6.png">
+	</div>
+	<div class="item-slide">
+		<img src="images/banners/banner7.png">
+	</div>
+</div>
+
+<!-- ========================= SECTION REQUEST .END// ========================= -->
+
+<!-- ========================= SECTION ITEMS ========================= -->
+<section class="section-request bg padding-y-sm">
+	<div class="container">
+	<header class="section-heading heading-line">
+		
+		<h4 class="title-section bg text-uppercase">Informática</h4>
+
+	</header>
+	<div class="row-sm">
+			<div class="col-md-2">
+				<% for (let i=0;i<products.length;i++){%>
+					<%if(products[i].category == 'informatica') {%>
+						<figure class="card card-product">
+								<img src="../images/items/<%= products[i].category %>/<%= products[i].images %>">
+								<h6 class="title ">
+								<a href="#">
+								<%if(products[i].title == 'Monitor Gamer Bluecase LED 27", Full HD, HDMI/DisplayPort, 144Hz, 1ms') {%>
+									<a href="/monitor-detalhes">
+								<%}%>
+								<%if(products[i].title == 'Cpu Gamer') {%>
+									<a href="/cpu-detalhes">
+								<%}%>
+								<%= products[i].title %></a></h6>
+								<span class="price-new">R$ <%= products[i].price %>,00</span> 
+			
+								<% if (user) { %>
+									<form class="formCart" action="/api/user_cart/<%= user._id %>/add_cart/<%= products[i]._id %>" method="POST">
+										<button type="submit" class="btn btn-primary">Adicionar no Carrinho</button>
+									</form>
+								<% } %>
+						</figure> <!-- card // -->
+					<% } %>
+				<%if(products[i].category == 'informatica') {%>
+			</div> <!-- col // -->
+				
+					<div class="col-md-2">
+						<% } %>
+						<%}%>
+					</div> <!-- col // -->
+				
+	
+	
+	</div><!-- container // -->
+		
+	
+</section>
+<!-- ========================= SECTION ITEMS .END// ========================= -->
+
+</body>
+</html>

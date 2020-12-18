@@ -1,0 +1,49 @@
+<%- contentFor('body') %>
+<div class="container">
+    <div class="pageLogin">
+        <h4>CADASTRAR USUÁRIO</h4>
+        <form action="/api/user" method="POST">
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-control"
+                    placeholder="Digite seu nome"
+                />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-control"
+                placeholder="Digite seu Email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">Senha</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-control"
+                placeholder="Digite sua senha"
+              />
+            </div>
+            <div class="form-group">
+               <label for="contact">Contato</label>
+                <input
+                    type="text"
+                    id="contact"
+                    name="contact"
+                    class="form-control"
+                    placeholder="Digite seu contato"
+                />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btnSubmit">Cadastrar</button>
+          </form>
+    </div>
+</div>

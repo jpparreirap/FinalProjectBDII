@@ -1,0 +1,102 @@
+<%- contentFor('body') %>
+<section class="section-content bg padding-y border-top">
+        <div class="container">
+        
+        <div class="row">
+            <main class="col-sm-9">
+        
+        <div class="card">
+        <table class="table table-hover shopping-cart-wrap">
+        <thead class="text-muted">
+        <tr>
+          <th scope="col">Produtos</th>
+          <th scope="col" width="120">Quantitade</th>
+          <th scope="col" width="120">Preço Un.</th>
+          <th scope="col" class="text-right" width="200">Ativa</th>
+        </tr>
+        </thead>
+        <tbody>
+                <% for (let i=0;i<user.cart.length;i++){%>
+        <tr>
+            <td>
+        <figure class="media">
+            <div class="img-wrap"><img src="../images/items/<%=user.cart[i].category %>/<%=user.cart[i].images %>" class="img-thumbnail img-sm"></div>
+            <figcaption class="media-body">
+                <h6 class="title text-truncate"><%=user.cart[i].title %></h6>
+            </figcaption>
+        </figure> 
+            </td>
+            
+            <td> 
+                    <div class="divCountCart">
+                            <form action="/api/user_cart/<%= user._id %>/rem_cart/<%= user.cart[i].product %>" method="POST">
+                                <button type="submit">-</button>
+                            </form>
+                            <input class="countCart" type="text" value="<%= user.cart[i].amout %>" disabled>
+                            <form action="/api/user_cart/<%= user._id %>/add_cart/<%= user.cart[i].product %>" method="POST">
+                                <button type="submit">+</button>
+                            </form>
+                        </div> 
+            </td>
+            <td> 
+                <div class="price-wrap"> 
+                    <var class="price">R$ <%=user.cart[i].price %></var> 
+                </div> <!-- price-wrap .// -->
+            </td>
+            <td class="text-right"> 
+            <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-outline-success" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
+            
+            <form action="/api/user_cart/<%= user._id %>/rem_cart_all/<%= user.cart[i].product %>" method="POST">
+                <button class="btn btn-outline-danger btnRemove" type="submit"> × Remove</button>
+            </form>
+            </td>
+        </tr>
+        <%}%>
+       
+        
+        </tbody>
+        </table>
+        </div> <!-- card.// -->
+        
+            </main> <!-- col.// -->
+            <aside class="col-sm-3">
+        <!--p class="alert alert-success">Na compra de 500,00 o frente sai gratis </p>-->
+        <dl class="dlist-align">
+          <dt>Preço Total: </dt>
+          <dd class="text-right">R$ <%= totalCart %></dd>
+        </dl>
+        <dl class="dlist-align">
+          <dt>Desconto:</dt>
+          <dd class="text-right">R$ 00,00</dd>
+        </dl>
+        <dl class="dlist-align h4">
+          <dt>Total:</dt>
+          <dd class="text-right"><strong>R$ <%= totalCart %></strong></dd>
+        </dl>
+        <hr>
+        <figure class="itemside mb-3">
+            <aside class="aside"><img src="images/icons/pay-visa.png"></aside>
+             <div class="text-wrap small text-muted">
+        Pay 84.78 AED ( Save 14.97 AED )
+        By using ADCB Cards 
+             </div>
+        </figure>
+        <figure class="itemside mb-3">
+            <aside class="aside"> <img src="images/icons/pay-mastercard.png"> </aside>
+            <div class="text-wrap small text-muted">
+        Pay by MasterCard and Save 40%. <br>
+        Lorem ipsum dolor 
+            </div>
+        </figure>
+        <form action="/api/finalizar_compra/<%= user._id %>" method="POST">
+            <a href="/cart" class="site-btn">
+                <button type="submit" class="btn btn-primary btn-block">Comprar</button>
+            </a>
+        </form>
+        
+        
+            </aside> <!-- col.// -->
+        </div>
+        
+        </div> <!-- container .//  -->
+        </section>
