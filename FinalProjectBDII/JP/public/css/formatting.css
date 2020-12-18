@@ -1,0 +1,39 @@
+.pageLogin{
+    padding: 40px 0px;
+}
+.formCart{
+    display: contents;
+}
+.divCountCart{
+    width: 100px;
+    border-color: #fff;
+    display: flex;
+    margin: 0px auto;
+}
+.divCountCart .left{
+    width: 25px;
+    height: 25px;
+}
+.divCountCart button{
+    font-size: 40px;
+    color: #fff;
+    border-radius: 10px;
+    background: #007bff;
+    height: 30px;
+    width: 30px;
+    line-height: 10px;
+    border: 0px;
+    padding: 0px 1px 10px 1px;
+    cursor: pointer;
+}
+.countCart{
+    width: 28px;
+    float: left;
+    border: none;
+    height: 35px;
+    line-height: 40px;
+    padding: 0;
+    font-size: 35px;
+    text-align: center;
+    background-color: transparent;
+}
